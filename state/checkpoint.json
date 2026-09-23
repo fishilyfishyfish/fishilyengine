@@ -1,0 +1,139 @@
+{
+ "best": {
+  "V": [
+   2,
+   16,
+   120,
+   1000
+  ],
+  "capThreat": 70,
+  "capBlocked": 30,
+  "capRevive": 5000,
+  "capReviveOpp": 2500,
+  "capThreatOpp": 30
+ },
+ "tried": [
+  "{\"V\":[2,16,120,600],\"capThreat\":70,\"capBlocked\":30,\"capRevive\":5000,\"capReviveOpp\":2500,\"capThreatOpp\":30}",
+  "{\"V\":[2,10,120,1000],\"capThreat\":70,\"capBlocked\":30,\"capRevive\":5000,\"capReviveOpp\":2500,\"capThreatOpp\":30}",
+  "{\"V\":[3,16,120,1000],\"capThreat\":70,\"capBlocked\":30,\"capRevive\":5000,\"capReviveOpp\":2500,\"capThreatOpp\":30}",
+  "{\"V\":[2,16,120,1600],\"capThreat\":70,\"capBlocked\":30,\"capRevive\":5000,\"capReviveOpp\":2500,\"capThreatOpp\":30}"
+ ],
+ "queue": [
+  {
+   "knob": "V3",
+   "factor": 0.8
+  },
+  {
+   "knob": "capThreatOpp",
+   "factor": 0.6
+  },
+  {
+   "knob": "V0",
+   "factor": 0.6
+  },
+  {
+   "knob": "capRevive",
+   "factor": 0.8
+  },
+  {
+   "knob": "capReviveOpp",
+   "factor": 0.8
+  },
+  {
+   "knob": "V2",
+   "factor": 1.6
+  },
+  {
+   "knob": "capThreat",
+   "factor": 1.25
+  },
+  {
+   "knob": "capThreat",
+   "factor": 0.8
+  },
+  {
+   "knob": "capReviveOpp",
+   "factor": 0.6
+  },
+  {
+   "knob": "V1",
+   "factor": 1.6
+  },
+  {
+   "knob": "V3",
+   "factor": 1.25
+  },
+  {
+   "knob": "V1",
+   "factor": 0.8
+  },
+  {
+   "knob": "capRevive",
+   "factor": 1.25
+  },
+  {
+   "knob": "V0",
+   "factor": 1.6
+  },
+  {
+   "knob": "capThreat",
+   "factor": 0.6
+  },
+  {
+   "knob": "capThreatOpp",
+   "factor": 1.6
+  },
+  {
+   "knob": "capRevive",
+   "factor": 1.6
+  },
+  {
+   "knob": "capReviveOpp",
+   "factor": 1.6
+  },
+  {
+   "knob": "capRevive",
+   "factor": 0.6
+  },
+  {
+   "knob": "capThreatOpp",
+   "factor": 1.25
+  },
+  {
+   "knob": "capThreatOpp",
+   "factor": 0.8
+  },
+  {
+   "knob": "V1",
+   "factor": 1.25
+  },
+  {
+   "knob": "capThreat",
+   "factor": 1.6
+  },
+  {
+   "knob": "V2",
+   "factor": 0.6
+  },
+  {
+   "knob": "V2",
+   "factor": 1.25
+  },
+  {
+   "knob": "V2",
+   "factor": 0.8
+  },
+  {
+   "knob": "capReviveOpp",
+   "factor": 1.25
+  }
+ ],
+ "round": 1,
+ "log": [
+  "--- 1회차 시작 (기준: {\"V\":[2,16,120,1000],\"capThreat\":70,\"capBlocked\":30,\"capRevive\":5000,\"capReviveOpp\":2500,\"capThreatOpp\":30})",
+  "V3×0.6: 후보 21승 19패 0무 (승률 53%) 82.892초",
+  "V1×0.6: 후보 17승 22패 1무 (승률 44%) 108.787초",
+  "V0×1.25: 후보 21승 18패 1무 (승률 54%) 94.346초",
+  "V3×1.6: 후보 19승 21패 0무 (승률 48%) 94.895초"
+ ]
+}
