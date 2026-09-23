@@ -1,0 +1,9 @@
+{
+  "checkpoint": "state/checkpoint.json",
+  "engineCfg": { "rules": false, "maxDepth": 40, "time": 500, "beam": 12, "qmax": 8, "qwidth": 5, "noise": 0, "pick": 0, "atk": 1.2 },
+  "gamesPerCandidate": 40,
+  "openingStones": 2,
+  "workers": 0,
+  "acceptWinRate": 0.60,
+  "maxMinutes": 320
+}
