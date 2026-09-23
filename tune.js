@@ -53,7 +53,9 @@ function playGame(engine, cfgA, cfgB, opening, aFirst) {
     const cfg = (side === 1) === aFirst ? cfgA : cfgB;
     const res = engine.think(b.slice(), side, blocked, cfg, {});
     const i = res.i, r = res.r;
-    if (i < 0 || b[i] !== 0 || i === blocked) throw new Error("불법 수: " + i);
+    // 빈칸이 방금 제거된 금지칸 하나뿐이면 둘 곳이 없다 → 무승부 처리
+    if (i < 0) return 0;
+    if (b[i] !== 0 || i === blocked) throw new Error("불법 수: " + i);
     b[i] = side; moves++;
     if (isWin(b, i, side)) return side;
     const cs = capsAt(b, i, side);
