@@ -1,0 +1,53 @@
+name: tune
+
+on:
+  workflow_dispatch:          # 수동 실행 (Actions 탭에서 Run workflow)
+  schedule:
+    - cron: "0 */6 * * *"     # 6시간마다 자동 실행 (혹시 이어지기가 끊겼을 때 보험)
+
+concurrency:
+  group: tune                 # 동시에 두 번 돌지 않게
+  cancel-in-progress: false
+
+permissions:
+  contents: write             # 체크포인트를 저장소에 커밋
+  actions: write              # 끝나면 스스로 다음 실행을 걸기
+
+jobs:
+  tune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 코어 수 확인
+        run: nproc
+
+      - name: 튜닝 실행
+        run: node tune.js tune-config.json
+
+      - name: 결과 커밋
+        if: always()
+        run: |
+          git config user.name "tune-bot"
+          git config user.email "tune-bot@users.noreply.github.com"
+          git add state/checkpoint.json || true
+          git diff --staged --quiet || git commit -m "tune: 진행 상황 저장"
+          git pull --rebase --autostash || true
+          git push || true
+
+      - name: 다음 실행 걸기
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f state/STOP ]; then
+            echo "state/STOP 파일이 있어서 여기서 멈춤."
+          else
+            gh workflow run tune.yml --repo "$GITHUB_REPOSITORY"
+            echo "다음 실행을 걸었음."
+          fi
